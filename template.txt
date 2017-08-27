@@ -1,0 +1,109 @@
+### File header must not be modified
+### This file must be encoded into UTF-8.
+SCIM_Generic_Table_Phrase_Library_TEXT
+VERSION_1_0
+
+### Begin Table definition.
+BEGIN_DEFINITION
+
+### License
+LICENSE = MIT
+
+### An unique id to distinguish this table among others.
+UUID = 47e0f845-c440-4d69-b27b-beb7aa401fc2
+
+### A unique number indicates the version of this file.
+SERIAL_NUMBER = 20170826
+
+### ICON can be any format as long as your pygtk can recognized
+### the most widely ones are "png" and "svg", letter one is recommended
+ICON = Emojione_1F600.svg
+
+### The symbol to be displayed in IM switchers
+SYMBOL = 😃
+
+### The default name of this table, this is needed
+NAME = Emoji English
+
+### Description
+DESCRIPTION = Emoji English input engine table for IBus Table.
+
+### Supported languages of this table
+LANGUAGES = en_US, en_UK
+
+### The author of this table
+AUTHOR = Xavier Lambein <xlambein@gmail.com> 
+
+### Prompt string to be displayed in the status area
+STATUS_PROMPT = EmEng
+
+### Valid input chars.
+VALID_INPUT_CHARS = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890():;#/
+
+### Layout
+LAYOUT = us
+
+### The max number of input keys for every phrase or character.
+MAX_KEY_LENGTH = 20
+
+### Use auto_commit mode as default
+AUTO_COMMIT = FALSE
+
+### Automatically selects the first phrase when typing
+AUTO_SELECT = FALSE
+
+### Use full width punctuation by default
+DEF_FULL_WIDTH_PUNCT = TRUE
+### Not use full width letter by default
+DEF_FULL_WIDTH_LETTER = FALSE
+
+### Whether user are allow to define phrase, default is true
+### You have to define the word construction rules below.
+### For input methods which do not input phrases, set this to False
+USER_CAN_DEFINE_PHRASE = TRUE
+
+### Whether support PinYin Mode, default is true.
+PINYIN_MODE = FALSE
+
+### If true then the phrases' frequencies will be adjusted dynamically
+### according your using frequency.
+DYNAMIC_ADJUST = TRUE 
+
+### Some characters whose frequencies should be fix all the time, e.g. 
+### some punctuations
+### NO_CHECK_CHARS = 
+
+### Rules for constructing user defined phrase
+### "ce" stands for "ci equal", a Chinese English :), means "phrase length
+### equal to", thus ce2 -> phrase length equal to 2; and "ca" means "phrase
+### length equal or above", so ca4 -> phrase length equal or above 4.
+### p21 -> the 1st key of 2nd character in the phrase, and so on.
+### Each rule separate via ";". 
+### Example below is a complete rule-set, 
+### becuase [2,2] ∩ [3,3] ∩ [4,+∞] = [2,+∞], which is the range of length
+### of phrase. This have to be satisfied if you need ibus-table to build up
+### your own inputed phrase via your daily using.
+### RULES = ce2:p11+p12+p21+p22;ce3:p11+p21+p22+p31;ca4:p11+p21+p31+p41
+
+### The key strokes to page up the lookup table.
+### PAGE_UP_KEYS = Page_Up,KP_Page_Up,minus,comma
+
+### The key strokes to page down.
+### PAGE_DOWN_KEYS = Page_Down,KP_Page_Down,equal,period
+
+### The key strokes to select candidiate phrases.
+SELECT_KEYS = F1,F2,F3,F4,F5,F6,F7,F8,F9
+
+### The default orientation of the candidate list
+### TRUE means the candidate list is vertical, FALSE means it is vertical
+ORIENTATION=TRUE
+
+END_DEFINITION
+
+### Begin Table data.
+### Format of every line whose formated in "input_keys\tphrase\tfreq\n" is an
+### entry.
+### From left to right, the 1st column are the input key combination that you
+### entered via keyboard; the 2nd column are presented character or phrase of
+### the key combination you want; the 3rd column are frequency of the character
+### or phrase.
